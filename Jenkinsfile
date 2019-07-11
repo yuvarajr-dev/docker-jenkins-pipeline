@@ -37,7 +37,7 @@ node {
   }
 
   stage('Run Tests') {
-    try {
+      {
       dir('webapp') {
         sh "mvn test"
         docker.build("yuvarajr-dev/docker-jenkins-pipeline:${env.BUILD_NUMBER}").push()
