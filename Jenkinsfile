@@ -42,7 +42,7 @@ node {
         sh "mvn test"
         docker.build("yuvarajr-dev/docker-jenkins-pipeline:${env.BUILD_NUMBER}").push()
       }
-    } //catch (error) {
+    //} catch (error) {
 
   //  } finally {
      // junit '**/target/surefire-reports/*.xml'
