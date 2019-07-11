@@ -37,7 +37,7 @@ node {
   stage('Run Tests') {
     try {
       dir('webapp') {
-        sh "mvn test"
+        sh "mvn test -DskipTests"
         docker.build("arungupta/docker-jenkins-pipeline:${env.BUILD_NUMBER}").push()
       }
     } catch (error) {
