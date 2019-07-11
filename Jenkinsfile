@@ -25,9 +25,9 @@ node {
       sh "docker run -e DB_URI=$DB yuvarajr-dev/docker-jenkins-pipeline:${env.BUILD_NUMBER}"
 
       // Run tests using Maven
-      //dir ('webapp') {
-      //  sh 'mvn exec:java -DskipTests'
-      //}
+      dir ('webapp') {
+        sh 'mvn exec:java -DskipTests'
+      }
     } catch (error) {
     } finally {
       // Stop and remove database container here
